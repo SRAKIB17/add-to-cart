@@ -96,11 +96,10 @@ function laptopDIV() {
         let getProductTitle = productItem[0].category;
         productDIV += '<section class="container mb-3"><div class="row" id="laptopSection"><h2>'+getProductTitle+'</h2><!-- laptopProduct -->'
         for (let i = 0; i < productItem.length; i++) {
-            document.getElementById('test').innerHTML = productArray
             let getProductItem = productItem[i];
 
             let getId = getProductItem.category+'-'+i+'-0';
-            productDIV += '<div class="col-lg-4 col-sm-6 d-flex flex-column  gap-2"><div class="rounded-3 shadow-lg p-2 h-100"><input type="text" id="getProductImage-'+getId+'" value="'+getProductItem.category+'/'+getProductItem.Image+'" hidden> <img src="images/'+getProductItem.category+'/'+getProductItem.Image+'" alt="" class="img-fluid"><h4><input type="text" id="getProductModel-'+getId+'" value="'+getProductItem.model+'" hidden>'+getProductItem.model+'</h4><div class="d-flex justify-content-between"><h2>Stock:'+getProductItem.quantity+'</h2> <h2 class="text-warning"><input type="text" id="getProductPrice-'+getId+'" value="'+getProductItem.price+'" hidden>Tk.'+getProductItem.price+'</h2> </div><p>'+getProductItem.detail+'</p><div class="d-flex justify-content-between mt-1 align-self-end" ><input type="number" id="'+getId+'" class="w-25" min="1" value="1"><button class="btn bg-warning" value="'+getId+'" onclick="addToCart(this)"><i class="fa fa-shopping-cart" style="font-size:36px;color: whitesmoke;"></i></button></div></div></div>'
+            productDIV += '<div class="col-lg-4 col-sm-6 item rounded-3 p-2 d-flex flex-column  gap-4"><div class="h-100"><input type="text" id="getProductImage-'+getId+'" value="'+getProductItem.category+'/'+getProductItem.Image+'" hidden> <img src="images/'+getProductItem.category+'/'+getProductItem.Image+'" alt="" class="img-fluid"><h4><input type="text" id="getProductModel-'+getId+'" value="'+getProductItem.model+'" hidden>'+getProductItem.model+'</h4><div class="d-flex justify-content-between"><h2>Stock:'+getProductItem.quantity+'</h2> <h2 class="text-warning"><input type="text" id="getProductPrice-'+getId+'" value="'+getProductItem.price+'" hidden>Tk.'+getProductItem.price+'</h2> </div><p>'+getProductItem.detail+'</p><div class="d-flex justify-content-between mt-1 align-self-end" ><input type="number" id="'+getId+'" class="w-25" min="1" value="1"><button class="btn bg-warning" value="'+getId+'" onclick="addToCart(this)"><i class="fa fa-shopping-cart" style="font-size:36px;color: whitesmoke;"></i></button></div></div></div>'
         }
         productDIV += '</div></section>'
         indexA ++
@@ -146,5 +145,5 @@ function addToCart(countColumn) {
     cart[cart.length-1].image = cartImage;
     cart[cart.length-1].product = cartProductModel;
     cart[cart.length-1].price = cartPrice;        cart[cart.length-1].quantity = cartQuantity;
-    
+    AutoHiddenCartDetailsUpdate()
 }
