@@ -11,7 +11,7 @@ let cart = [
 function auto() {
     let productTableTr = '<tr><th><img src="images/'+cart[0].image+'.jpg" alt="" class="cartImage">'+cart[0].product+'</th><th>'+cart[0].price+'</th><th>'+cart[0].quantity+'</th><th>Total</th></tr>'
     for (let index = 1; index < cart.length; index++) {
-        productTableTr += '<tr><td><img src="images/'+cart[index].image+'.jpg" alt="" class="cartImage">'+cart[index].product+'</td><td>'+cart[index].price+'</td><td>'+cart[index].quantity+'</td><td>'+cart[index].quantity*cart[index].price+'</td></tr>'
+        productTableTr += '<tr><td><img src="images/'+cart[index].image+'" alt="" class="cartImage">'+cart[index].product+'</td><td>'+cart[index].price+'</td><td>'+cart[index].quantity+'</td><td>'+cart[index].quantity*cart[index].price+'</td></tr>'
     }
     return productTableTr;
 }
