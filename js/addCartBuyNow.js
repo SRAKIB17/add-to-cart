@@ -72,7 +72,7 @@ function buyNow(ProductId) {
     buyProduct[buyProduct.length-1].quantity = buyQuantity;
 
     // create table
-    let table = '<table class="w-100"><caption>Show Details</caption><tr><td><img src="images/'+buyImage+'" alt="" class="cartImage"></td><td colspan="2">'+buyProductModel+'</td></tr><tr><td>Quantity:  </td><td class="text-center">'+buyQuantity+'</td><td rowspan="3"><button class="btn bg-warning" value="'+0+'" onclick="addToCart(this)" style="font-size:24px;color: whitesmoke;">Buy</button></td></tr><tr><td>Price:</td><td>Tk.'+buyPrice+'</td></tr><tr><td>Total:</td><td>Tk.'+totalProductValue+'</td></tr></table>'
+    let table = '<table class="w-100"><tr><td colspan="3" class="text-center h4">Product Details</td></tr><tr><td><img src="images/'+buyImage+'" alt="" class="cartImage"></td><td colspan="2">'+buyProductModel+'</td></tr><tr><td>Quantity:  </td><td class="text-center">'+buyQuantity+'</td><td rowspan="3"><button class="btn bg-warning" value="'+0+'" onclick="addToCart(this)" style="font-size:24px;color: whitesmoke;">Buy</button></td></tr><tr><td>Price:</td><td>Tk.'+buyPrice+'</td></tr><tr><td>Total:</td><td>Tk.'+totalProductValue+'</td></tr></table>'
 
     document.getElementById('buyNowBody-'+getId).innerHTML = table;
 }
