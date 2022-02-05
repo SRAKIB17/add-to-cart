@@ -99,7 +99,7 @@ function laptopDIV() {
             let getProductItem = productItem[i];
 
             let getId = getProductItem.category+'-'+i+'-0';
-            productDIV += '<div class="col-xs-12 col-lg-4 col-sm-6 item rounded-3 p-4 d-flex flex-column"><div class="h-100 position-relative"><input type="text" id="getProductImage-'+getId+'" value="'+getProductItem.category+'/'+getProductItem.Image+'" hidden> <img src="images/'+getProductItem.category+'/'+getProductItem.Image+'" alt="" class="img-fluid"><h4><input type="text" id="getProductModel-'+getId+'" value="'+getProductItem.model+'" hidden>'+getProductItem.model+'</h4><div class="d-flex justify-content-between"><h2>Stock:'+getProductItem.quantity+'</h2> <h2 class="text-warning"><input type="text" id="getProductPrice-'+getId+'" value="'+getProductItem.price+'" hidden>Tk.'+getProductItem.price+'</h2> </div><p>'+getProductItem.detail+'</p><div class="d-flex buyNow justify-content-between mt-1 align-self-end position-absolute bottom-0" ><input type="number" id="'+getId+'" class="w-25" min="1" value="1"><button class="btn bg-warning" value="'+getId+'" onclick="addToCart(this)"><i class="fa fa-shopping-bag" style="font-size:24px;color: whitesmoke;"></i></button><button class="btn bg-warning" value="'+getId+'" onclick="addToCart(this)"><i class="fa fa-shopping-cart" style="font-size:24px;color: whitesmoke;"></i></button></div></div></div>'
+            productDIV += '<div class="col-xs-12 col-lg-4 col-sm-6 item rounded-3 p-4 d-flex flex-column"><div class="h-100 position-relative"><input type="text" id="getProductImage-'+getId+'" value="'+getProductItem.category+'/'+getProductItem.Image+'" hidden> <img src="images/'+getProductItem.category+'/'+getProductItem.Image+'" alt="" class="img-fluid"><h4><input type="text" id="getProductModel-'+getId+'" value="'+getProductItem.model+'" hidden>'+getProductItem.model+'</h4><div class="d-flex justify-content-between"><h2>Stock:'+getProductItem.quantity+'</h2> <h2 class="text-warning"><input type="text" id="getProductPrice-'+getId+'" value="'+getProductItem.price+'" hidden>Tk.'+getProductItem.price+'</h2> </div><p>'+getProductItem.detail+'</p><div class="d-flex buyNow justify-content-between mt-1 align-self-end position-absolute bottom-0" ><input type="number" id="'+getId+'" class="w-25" min="1" value="1"><button class="btn bg-warning" value="'+getId+'" onclick="buyNow(this)"><i class="fa fa-shopping-bag" style="font-size:24px;color: whitesmoke;"></i></button><button class="btn bg-warning" value="'+getId+'" onclick="addToCart(this)"><i class="fa fa-shopping-cart" style="font-size:24px;color: whitesmoke;"></i></button></div></div></div>'
         }
         productDIV += '</div></section>'
         indexA ++
@@ -107,43 +107,3 @@ function laptopDIV() {
     return document.getElementById('productDivId').innerHTML = productDIV;
 }
 
-function addToCart(countColumn) {
-    let getCart = cart;
-
-    // get cart count 
-    let getCartValue = Number(document.getElementById('cartCount').value);
-
-    // input getId
-    let getId = countColumn.value;
-    let countCartProduct = Number(document.getElementById(getId).value);
-
-    // separate for get item code with item Main Product;
-        // get Image
-    let cartImage = document.getElementById('getProductImage-'+getId).value;
-        // get model or product 
-    let cartProductModel = document.getElementById('getProductModel-'+getId).value;
-        // get quantity
-    let cartQuantity = countCartProduct;
-        // get item price
-    let cartPrice = document.getElementById('getProductPrice-'+getId).value;
-    
-    // count total 
-    let totalCartValue = getCartValue + countCartProduct;
-
-    // print count and store count Number
-    document.getElementById('cartCount').value = totalCartValue;
-    document.getElementById('showCartValue').innerHTML = totalCartValue;
-    // add item on cart Object
-    let creatObject =  {
-        image:'none',
-        product: 'none',
-        price: 0,
-        quantity: 0
-    }
-    
-    cart.push(creatObject);
-    cart[cart.length-1].image = cartImage;
-    cart[cart.length-1].product = cartProductModel;
-    cart[cart.length-1].price = cartPrice;        cart[cart.length-1].quantity = cartQuantity;
-    AutoHiddenCartDetailsUpdate()
-}
