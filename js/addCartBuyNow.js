@@ -38,3 +38,13 @@ function addToCart(countColumn) {
     cart[cart.length-1].price = cartPrice;        cart[cart.length-1].quantity = cartQuantity;
     AutoHiddenCartDetailsUpdate()
 }
+function buyNow(getId) {
+        document.getElementById('BuyNow-'+getId.value).style.display = 'block';
+        document.getElementById('BuyNow-'+value.value).style.transform = 'scale(1.4)';
+        
+}
+function closeBuy(getId) {
+        document.getElementById('BuyNow-'+getId.value).style.display = 'none';
+        document.getElementById('BuyNow-'+value.value).style.transform = 'scale(1.4)';
+        
+}
