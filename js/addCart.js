@@ -6,6 +6,7 @@ let cart = [
         quantity: 'Quantity'
     }
 ]
+let buyProduct = []
 
 
 function auto() {
