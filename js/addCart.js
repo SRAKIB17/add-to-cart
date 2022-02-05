@@ -11,7 +11,7 @@ let cart = [
 function auto() {
     let productTableTr = '<tr><th>'+cart[0].product+'</th><th>'+cart[0].price+'</th><th>'+cart[0].quantity+'</th><th>Sub Total</th></tr>'
     for (let index = 1; index < cart.length; index++) {
-        productTableTr += '<tr><td><img src="images/'+cart[index].image+'" alt="" class="cartImage">'+cart[index].product+'</td><td>'+cart[index].price+'</td><td>'+cart[index].quantity+'</td><td>'+cart[index].quantity*cart[index].price+'</td><td><button style="font-size:16px" class="btn bg-danger" value="'+index+'" onclick="deleteCart(this)"><i class="fa fa-trash-o" style="color:white"></i></button></td></tr>'
+        productTableTr += '<tr><td class="d-flex align-items-center justify-content-center"><img src="images/'+cart[index].image+'" alt="" class="cartImage">'+cart[index].product+'</td><td>'+cart[index].price+'</td><td>'+cart[index].quantity+'</td><td>'+cart[index].quantity*cart[index].price+'</td><td><button style="font-size:16px" class="btn bg-danger" value="'+index+'" onclick="deleteCart(this)"><i class="fa fa-trash-o" style="color:white"></i></button></td></tr>'
     }
     let totalPrice = 0
     for (let totalCountIndex = 1; totalCountIndex < cart.length; totalCountIndex++) {
