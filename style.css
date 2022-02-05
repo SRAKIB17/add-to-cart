@@ -1,5 +1,6 @@
 .showCartDetails {
     position: absolute;
+    z-index: 20;
     display: none;
     right: 0px;
     left: 0;
@@ -28,6 +29,13 @@
     font-weight: bold;
     border-radius: 50%;
     background-color: rgb(64, 224, 208);
+}
+.buyNow {
+    opacity: 0;
+}
+.col-lg-4:hover .buyNow {
+    opacity: 1;
+    transition: all 0.5s ease;
 }
 .fa-shopping-cart {
     color: whitesmoke;
