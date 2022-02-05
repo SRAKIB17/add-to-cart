@@ -8,7 +8,7 @@
 .showCartDetailsOverflow {
     height: 60vh;
     overflow: auto;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 #cartCount {
     position: relative;

@@ -94,12 +94,12 @@ function laptopDIV() {
     while (indexA < productArray.length) {
         let productItem = productArray[indexA];
         let getProductTitle = productItem[0].category;
-        productDIV += '<section class="container mb-3"><div class="row" id="laptopSection"><h2>'+getProductTitle+'</h2><!-- laptopProduct -->'
+        productDIV += '<section class="container mb-3"><div class="row g-2" id="laptopSection"><h2>'+getProductTitle+'</h2><!-- laptopProduct -->'
         for (let i = 0; i < productItem.length; i++) {
             let getProductItem = productItem[i];
 
             let getId = getProductItem.category+'-'+i+'-0';
-            productDIV += '<div class="col-xs-12 col-lg-4 col-sm-6 item rounded-3 p-2 d-flex flex-column  gap-4"><div class="h-100"><input type="text" id="getProductImage-'+getId+'" value="'+getProductItem.category+'/'+getProductItem.Image+'" hidden> <img src="images/'+getProductItem.category+'/'+getProductItem.Image+'" alt="" class="img-fluid"><h4><input type="text" id="getProductModel-'+getId+'" value="'+getProductItem.model+'" hidden>'+getProductItem.model+'</h4><div class="d-flex justify-content-between"><h2>Stock:'+getProductItem.quantity+'</h2> <h2 class="text-warning"><input type="text" id="getProductPrice-'+getId+'" value="'+getProductItem.price+'" hidden>Tk.'+getProductItem.price+'</h2> </div><p>'+getProductItem.detail+'</p><div class="d-flex justify-content-between mt-1 align-self-end" ><input type="number" id="'+getId+'" class="w-25" min="1" value="1"><button class="btn bg-warning" value="'+getId+'" onclick="addToCart(this)"><i class="fa fa-shopping-cart" style="font-size:36px;color: whitesmoke;"></i></button></div></div></div>'
+            productDIV += '<div class="col-xs-12 col-lg-4 col-sm-6 item rounded-3 p-4 d-flex flex-column"><div class="h-100"><input type="text" id="getProductImage-'+getId+'" value="'+getProductItem.category+'/'+getProductItem.Image+'" hidden> <img src="images/'+getProductItem.category+'/'+getProductItem.Image+'" alt="" class="img-fluid"><h4><input type="text" id="getProductModel-'+getId+'" value="'+getProductItem.model+'" hidden>'+getProductItem.model+'</h4><div class="d-flex justify-content-between"><h2>Stock:'+getProductItem.quantity+'</h2> <h2 class="text-warning"><input type="text" id="getProductPrice-'+getId+'" value="'+getProductItem.price+'" hidden>Tk.'+getProductItem.price+'</h2> </div><p>'+getProductItem.detail+'</p><div class="d-flex justify-content-between mt-1 align-self-end" ><input type="number" id="'+getId+'" class="w-25" min="1" value="1"><button class="btn bg-warning" value="'+getId+'" onclick="addToCart(this)"><i class="fa fa-shopping-cart" style="font-size:36px;color: whitesmoke;"></i></button></div></div></div>'
         }
         productDIV += '</div></section>'
         indexA ++
