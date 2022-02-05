@@ -1,7 +1,7 @@
 .showCartDetails {
     position: absolute;
     display: none;
-    right: 10px;
+    right: 0px;
     left: 20px;
     background-color: rgb(64, 224, 208);
 }
