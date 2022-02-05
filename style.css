@@ -4,6 +4,11 @@
     right: 10px;
     background-color: rgb(64, 224, 208);
 }
+.showCartDetailsOverflow {
+    height: 60vh;
+    overflow: auto;
+    overflow-x: hidden;
+}
 #cartCount {
     position: relative;
 }
@@ -30,8 +35,7 @@
     bottom: 0px;
     margin-bottom: 0;
 }
-
-
+/* per item style */
 .item {
     /* background-color: whitesmoke; */
     box-shadow: 2px 3px 10px 2px rgba(71, 77, 77, 0.096);

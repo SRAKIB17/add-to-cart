@@ -25,13 +25,15 @@
                 <button style="font-size:24px" class="btn d-flex bg-warning align-items-center" id="cartCount" value="0" onclick="showCartDetails()"><P id="showCartValue"></P><i class="fa fa-shopping-cart"></i></button>
                 <div class="showCartDetails shadow p-5" id="showCart">
                     <button class="btn bg-danger position-absolute end-0 top-0 me-2 mt-2" onclick="closeCart()">X</button>
-                    <table class="table table-striped">
+                    <div class="showCartDetailsOverflow">
+                        <table class="table table-striped w-100">
                             <tbody id="productTable">
                                 
                             </tbody>
-                        </thead>
-                    </table>
+                        </table>
+                    </div>
                 </div>
+                
             </div>
         </div>
     </header>
