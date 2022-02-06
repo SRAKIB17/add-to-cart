@@ -22,18 +22,16 @@ function searchProduct(search) {
     searchQuiry = document.getElementById('searchId').value;
     getResult(searchQuiry);
     if (resultArray.length == 0) {
-        resultShow = 6456456
+        resultShow = '<div><h2 class="searchNotFound">Not Found</h2></div>'
     }
     else {
         for (let i = 0; i < resultArray.length; i++) {
             
-            resultShow += '<tr class="w-100"><td><img src="images/'+resultArray[i].category+'/'+resultArray[i].Image+'" alt="" class="cartImage">'+resultArray[i].model+'</td><td>'+resultArray[i].price+'</td><td>'+resultArray[i].detail.substr(0,10)+'</td><td>'+resultArray[i].category+'</td></tr>'
+            resultShow += '<tr class="w-100"><td><img src="images/'+resultArray[i].category+'/'+resultArray[i].Image+'" alt="" class="cartImage">'+resultArray[i].model.substr(0,10)+'</td><td>'+resultArray[i].price+'</td><td>'+resultArray[i].detail.substr(0,10)+'</td><td>'+resultArray[i].category+'</td></tr>'
         }
     }
 
     document.getElementById('resultDiv').innerHTML = resultShow;
     setInterval(searchProduct,2000);
     return result = [];
-    
-
 }

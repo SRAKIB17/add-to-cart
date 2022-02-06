@@ -144,8 +144,18 @@ let bagsProduct = [
     }
 ]
 
-setTimeout(laptopDIV,200)
 var productArray = [laptopProduct, WomenjacketProduct, ManjacketProduct,shoesProduct,bagsProduct];
+
+// waiting 
+setTimeout(waiting,100)
+function waiting() {
+    let wait = '<div><img src="images/busy.gif" alt=""></div>'
+    document.getElementById('productDivId').innerHTML = wait;
+    setTimeout(laptopDIV,1500)
+}
+
+
+
 function laptopDIV() {
     let productDIV = ''
     let indexA = 0;
