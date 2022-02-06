@@ -1,3 +1,16 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Coming+Soon&family=Poppins:wght@100;200;400&display=swap');
+body {
+    font-family: 'Poppins', sans-serif;
+}
+.fixed {
+    position: fixed;
+    padding: 5px 10px;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+    background-image: linear-gradient(to right top,rgb(166, 255, 0),rgb(0, 247, 255));
+}
 .showCartDetails {
     position: absolute;
     z-index: 20;
