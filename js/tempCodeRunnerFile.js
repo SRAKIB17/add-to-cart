@@ -1,0 +1,1 @@
+document.getElementById('productDivId').innerHTML = wait;

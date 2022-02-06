@@ -174,13 +174,13 @@ function laptopDIV() {
     }
     return document.getElementById('productDivId').innerHTML = productDIV;
 }
-
+// searchValue function 
 var result = []
 function getResult(searchValue) {
     for (const productList of productArray) {
     
         for (const getItem of productList) {
-            if (searchValue[0].match(/\s/g) && searchValue != '') {
+            if (searchValue[0].match(/\s/g) || searchValue == '') {
                 break
             }
             else if (getItem.model.includes(searchValue) || getItem.category.includes(searchValue)) {
