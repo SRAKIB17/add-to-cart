@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Online shop</title>
     <script src="js/decorateLaptop.js"></script>
     <script src="js/addCart.js"></script>
     
@@ -24,14 +24,15 @@
                 <img src="images/logo.png" alt="">
             </div>
             <div class="search-result">
+                <div class="overflowResult"></div>
                 <table id="resultDiv">
 
                 </table>
             </div>
             <div class="d-flex">
                 <div class="d-flex justify-content-between">
-                    <input type="search" onclick="searchProduct(this)" class="searchInput" id="searchId" placeholder="Search Product" value="gfgfg">
-                    <div>
+                    <input type="search" onclick="searchProduct(this)" class="searchInput" id="searchId" placeholder="Search Product" value="">
+                    <div class="bg-light">
                         <!-- show search box -->
                         <button class="btn" onclick="searchShow()" id="showSearchBox"><i class="fa fa-search"></i></button>
                         <!-- close search box -->
@@ -41,7 +42,7 @@
                 </div>
                 <button style="font-size:24px" class="btn d-flex bg-warning align-items-center" id="cartCount" value="0" onclick="showCartDetails()"><P id="showCartValue"></P><i class="fa fa-shopping-cart"></i></button>
                 <div class="showCartDetails shadow p-5" id="showCart">
-                    <button class="btn bg-danger position-absolute end-0 top-0 me-2 mt-2 text-white cartClose" onclick="closeCart()">X</button>
+                    <button class= "btn bg-danger position-absolute end-0 top-0 me-2 mt-2 text-white cartClose" onclick="closeCart()">X</button>
                     <div class="showCartDetailsOverflow">
                         <table class="table table-striped w-100">
                             <tbody id="productTable">
