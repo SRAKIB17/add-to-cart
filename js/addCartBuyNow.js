@@ -76,6 +76,7 @@ function buyNow(ProductId) {
 
     document.getElementById('buyNowBody-'+getId).innerHTML = table;
 }
+// closeBuy html code 
 function closeBuy(getId) {
         document.getElementById('BuyNow-'+getId.value).style.display = 'none';
         document.getElementById('BuyNow-'+value.value).style.transform = 'scale(1.4)';

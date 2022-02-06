@@ -1,4 +1,4 @@
-
+// searchShow with display search blox
 function searchShow() {
     document.getElementById('showCart').style.display = 'none'
     document.getElementById('searchId').style.display = 'inline'
@@ -7,13 +7,14 @@ function searchShow() {
     document.getElementById('resultDiv').style.display = 'block'
 
 }
-
+// hidden all of search and show searchShow icon 
 function searchClose() {
     document.getElementById('resultDiv').style.display = 'none'
     document.getElementById('searchId').style.display = 'none'
     document.getElementById('closeSearchBox').style.display = 'none'
     document.getElementById('showSearchBox').style.display = 'inline'
 }
+// search product function
 var searchQuiry = ''
 
 function searchProduct(search) {
@@ -26,8 +27,8 @@ function searchProduct(search) {
     }
     else {
         for (let i = 0; i < resultArray.length; i++) {
-            
-            resultShow += '<tr class="w-100"><td><img src="images/'+resultArray[i].category+'/'+resultArray[i].Image+'" alt="" class="cartImage">'+resultArray[i].model.substr(0,10)+'</td><td>'+resultArray[i].price+'</td><td>'+resultArray[i].detail.substr(0,10)+'</td><td>'+resultArray[i].category+'</td></tr>'
+            let getId = resultArray[i].category+'-'+i+'-0';
+            resultShow += '<tr class="w-100"><td><img src="images/'+resultArray[i].category+'/'+resultArray[i].Image+'" alt="" class="cartImage">'+resultArray[i].model.substr(0,10)+'</td><td>'+resultArray[i].price+'</td><td>'+resultArray[i].detail.substr(0,10)+'</td><td>'+resultArray[i].category+'</td><td><button class="btn bg-warning" value="'+getId+'" onclick="addToCart(this)"><i class="fa fa-shopping-cart" style="font-size:24px;color: whitesmoke;"></i></button></td></tr>'
         }
     }
 

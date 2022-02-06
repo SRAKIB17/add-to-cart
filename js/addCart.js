@@ -8,7 +8,7 @@ let cart = [
 ]
 let buyProduct = []
 
-
+// auto create table
 function auto() {
     let productTableTr = '<tr><th>'+cart[0].product+'</th><th>'+cart[0].price+'</th><th>'+cart[0].quantity+'</th><th>Sub Total</th></tr>'
     for (let index = 1; index < cart.length; index++) {
@@ -23,6 +23,7 @@ function auto() {
     return productTableTr;
 }
 let deleteIndex = 0;
+// deleteCart cart 
 function deleteCart(index) {
     
     deleteIndex = index.value;
@@ -37,16 +38,27 @@ function deleteCart(index) {
     document.getElementById('showCartValue').innerHTML = totalCartValue;
     showCartDetails()
 }
+// delete a item from cart
 function deleteItem(value,index) {
     return index != deleteIndex;
 }
 
 function showCartDetails() {
+    // hidden searchbox
+    document.getElementById('searchId').style.display = 'none'
+    // hidden searchClose icon 
+    document.getElementById('closeSearchBox').style.display = 'none'
+    // visible searchShow icon 
+    document.getElementById('showSearchBox').style.display = 'inline'
+    // display show cart 
     document.getElementById('showCart').style.display = 'block'
+    // hidden result table 
     document.getElementById('resultDiv').style.display = 'none'
+    // function call for craete a table cart
     document.getElementById('productTable').innerHTML = auto();
     return productTableTr;
 }
+// hidden or display add to cart auto update 
 function AutoHiddenCartDetailsUpdate() {
     document.getElementById('productTable').innerHTML = auto();
     return productTableTr;

@@ -5,7 +5,6 @@ body {
     overflow-x: hidden;
 }
 .fixed {
-    /* position: relative; */
     padding: 5px 10px;
     top: 0;
     right: 0;
@@ -88,9 +87,12 @@ body {
     border-radius: 50%;
     background-color: rgb(64, 224, 208);
 }
+/* for buy auto option */
 .buyNowSection {
     opacity: 0;
 }
+
+/* :hover effect */
 .col-lg-4:hover .buyNowSection {
     opacity: 1;
     transition: all 0.5s ease;
