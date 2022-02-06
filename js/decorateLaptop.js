@@ -144,7 +144,7 @@ let bagsProduct = [
     }
 ]
 
-setTimeout(laptopDIV,20)
+setTimeout(laptopDIV,200)
 var productArray = [laptopProduct, WomenjacketProduct, ManjacketProduct,shoesProduct,bagsProduct];
 function laptopDIV() {
     let productDIV = ''
@@ -170,11 +170,11 @@ function getResult(searchValue) {
     for (const productList of productArray) {
     
         for (const getItem of productList) {
-            if (getItem.model.includes(searchValue)) {
+            if (getItem.model.includes(searchValue) && searchValue != '') {
                 result.push(getItem)
             }
         }
     }
+    return result;
 }
-console.log(getResult('Jackbghet'))
 

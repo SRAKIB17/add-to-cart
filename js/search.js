@@ -26,7 +26,7 @@ function searchProduct(search) {
     }
     else {
         for (let i = 0; i < resultArray.length; i++) {
-            document.getElementById('resultDiv').style.height = '60vh;'
+            
             resultShow += '<tr class="w-100"><td><img src="images/'+resultArray[i].category+'/'+resultArray[i].Image+'" alt="" class="cartImage">'+resultArray[i].model+'</td><td>'+resultArray[i].price+'</td><td>'+resultArray[i].detail.substr(0,10)+'</td><td>'+resultArray[i].category+'</td></tr>'
         }
     }
