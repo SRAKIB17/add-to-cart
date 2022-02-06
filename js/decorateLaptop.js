@@ -1,7 +1,7 @@
 /* _--------------------
 -For laptop product
 -------------------------*/
-const laptopProduct = [
+let laptopProduct = [
     {
         Image: 'modern-15-01-228x228.jpg',
         price: 72000, 
@@ -30,7 +30,7 @@ const laptopProduct = [
 /*=---------------------
 for women jacket product
 ---------------------------*/
-const WomenjacketProduct = [
+let WomenjacketProduct = [
     {
         Image: 'jacket-1.png',
         price: 720, 
@@ -59,7 +59,7 @@ const WomenjacketProduct = [
 /*=---------------------
 for men jacket product
 ---------------------------*/
-const ManjacketProduct = [
+let ManjacketProduct = [
     {
         Image: 'jacket-4.png',
         price: 720, 
@@ -85,9 +85,67 @@ const ManjacketProduct = [
         category: 'Man Jacket'
     }
 ]
+/*=---------------------
+for shoes product
+---------------------------*/
+let shoesProduct = [
+    {
+        Image: 'shoe-1.png',
+        price: 720, 
+        quantity: 5,
+        model: 'nowboard Jacket Mens',
+        detail:'Processor: Intel Core i5-1155G7 (8M Cache, 2.50 GHz up to 4.50 GHz)Memory: 8GB DDR4 3200MHz RAM Storage: 512GB NVMe PCIe Gen3x4 SSD 15.6" FHD (1920x1080) Display',
+        category: 'Shoes'
+    },
+    {
+        Image: 'shoe-2.png',
+        price: 1840,
+        quantity:50,
+        model: 'Man Leather Jacket',
+        detail:'Bfjdsodsfdlskjd<br>sdsgjfsdotgfsdtgifsdjljgfdjgfdglfdjgfd<br>lgjfdgjfdgfdjgj',
+        category: 'Shoes'
+    },
+    {
+        Image: 'shoe-3.png',
+        price: 800,
+        quantity:5,
+        model: 'Man Casual Jacket',
+        detail:'IntgfdgfgggfgfgfgCIe Gen3x4 SSD GeForce MX450 2GB Graphics',
+        category: 'Shoes'
+    }
+]
+/*=---------------------
+for bags product
+---------------------------*/
+let bagsProduct = [
+    {
+        Image: 'bag-1.png',
+        price: 720, 
+        quantity: 5,
+        model: 'nowboard Jacket Mens',
+        detail:'Processor: Intel Core i5-1155G7 (8M Cache, 2.50 GHz up to 4.50 GHz)Memory: 8GB DDR4 3200MHz RAM Storage: 512GB NVMe PCIe Gen3x4 SSD 15.6" FHD (1920x1080) Display',
+        category: 'Bags'
+    },
+    {
+        Image: 'bag-2.png',
+        price: 1840,
+        quantity:50,
+        model: 'Man Leather Jacket',
+        detail:'Bfjdsodsfdlskjd<br>sdsgjfsdotgfsdtgifsdjljgfdjgfdglfdjgfd<br>lgjfdgjfdgfdjgj',
+        category: 'Bags'
+    },
+    {
+        Image: 'bag-3.png',
+        price: 800,
+        quantity:5,
+        model: 'Man Casual Jacket',
+        detail:'IntgfdgfgggfgfgfgCIe Gen3x4 SSD GeForce MX450 2GB Graphics',
+        category: 'Bags'
+    }
+]
 
 setTimeout(laptopDIV,20)
-let productArray = [laptopProduct, WomenjacketProduct, ManjacketProduct];
+var productArray = [laptopProduct, WomenjacketProduct, ManjacketProduct,shoesProduct,bagsProduct];
 function laptopDIV() {
     let productDIV = ''
     let indexA = 0;
@@ -106,4 +164,17 @@ function laptopDIV() {
     }
     return document.getElementById('productDivId').innerHTML = productDIV;
 }
+
+var result = []
+function getResult(searchValue) {
+    for (const productList of productArray) {
+    
+        for (const getItem of productList) {
+            if (getItem.model.includes(searchValue)) {
+                result.push(getItem)
+            }
+        }
+    }
+}
+console.log(getResult('Jackbghet'))
 

@@ -43,6 +43,7 @@ function deleteItem(value,index) {
 
 function showCartDetails() {
     document.getElementById('showCart').style.display = 'block'
+    document.getElementById('resultDiv').style.display = 'none'
     document.getElementById('productTable').innerHTML = auto();
     return productTableTr;
 }

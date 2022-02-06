@@ -2,19 +2,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Coming+Soon&family=Poppins:wght@100;200;400&display=swap');
 body {
     font-family: 'Poppins', sans-serif;
+    margin-top: 100px;
 }
 .fixed {
     position: fixed;
     padding: 5px 10px;
     top: 0;
+    height: 50px;
     z-index: 50;
     width: 100%;
     background-image: linear-gradient(to right top,rgb(166, 255, 0),rgb(0, 247, 255));
+}
+/* for search  */
+
+.searchInput {
+    display: none;
+}
+#closeSearchBox {
+    display: none;
+}
+.search-result{
+    width: 100%;
+    z-index: 30;
+    position: absolute;
+    top: 50px;
+    right: 0px;
+    left: 0;
+    
+}
+#resultDiv {
+    display: none;
+    background-color: whitesmoke;
+    left: 0;
+    padding: 5px;
+    right: 0;
+    position: inherit;
+    overflow: auto;
+    width: 100%;
+    animation: buyNow 500ms ease-in-out 1;
 }
 .showCartDetails {
     position: absolute;
     z-index: 20;
     display: none;
+    top: 50px;
     right: 0px;
     left: 0;
     background-color: rgb(64, 224, 208);
