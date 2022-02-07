@@ -147,18 +147,63 @@ let bagsProduct = [
 var productArray = [laptopProduct, WomenjacketProduct, ManjacketProduct,shoesProduct,bagsProduct];
 var result = []
 function getResult(searchValue) {
-    searchKey = new RegExp(searchValue,'gi')
+    let getKey = new RegExp(searchValue,'gi')
+    let matchLength = Number(searchValue.length);
+    let matchSlice = ''
+    let splitList = [];
+    let addHtml = ''
     for (const productList of productArray) {
     
-        for (const getItem of productList) {
+        for (let i = 0;i < productList.length;i++ ) {
+            let getItem = productList[i];
             if (searchValue[0].match(/\s/g) || searchValue == '') {
                 break
             }
-            else if (getItem.model.includes(searchKey,0) || getItem.category.includes(searchKey,0)) {
+            else if (getItem.model.search(getKey) >= 0 ) {
+                // get push 
                 result.push(getItem)
+                let getIdOfProduct = result.indexOf(getItem);
+                // get match index 
+                let indexMatch = getItem.model.search(getKey);
+                // count end index number 
+                var totalIndex = (indexMatch + matchLength);
+                // String slice 
+                matchSlice = getItem.model.slice(indexMatch,totalIndex);
+                /* create a array of String */
+                splitList = getItem.model.split(matchSlice);
+                /* html code add */
+                addHtml = '<mark>'+matchSlice+'</mark>'
+                // overright the array by splice
+                splitList.splice(1,0,addHtml);
+                // join String
+                let joinSplice = splitList.join('')
+                result[getIdOfProduct].model = joinSplice;
+                console.log(getIdOfProduct)
+            }
+            else if ( getItem.category.search(getKey) >= 0 ) {
+                // get push 
+                result.push(getItem)
+                let getIdOfProduct = result.indexOf(getItem);
+                // get match index 
+                let indexMatch = getItem.category.search(getKey);
+                // count end index number 
+                var totalIndex = (indexMatch + matchLength);
+                // String slice 
+                matchSlice = getItem.category.slice(indexMatch,totalIndex);
+                /* create a array of String */
+                splitList = getItem.category.split(matchSlice);
+                /* html code add */
+                addHtml = '<mark>'+matchSlice+'</mark>'
+                // overright the array by splice
+                splitList.splice(1,0,addHtml);
+                // join String
+                let joinSplice = splitList.join('')
+                result[getIdOfProduct].category = joinSplice;
+                console.log(getIdOfProduct)
             }
         }
     }
+    console.log(matchSlice)
     return result;
 }
-console.log(getResult('MSI'))
+console.log(getResult('man'))

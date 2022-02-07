@@ -162,7 +162,11 @@ function laptopDIV() {
     while (indexA < productArray.length) {
         let productItem = productArray[indexA];
         let getProductTitle = productItem[0].category;
-        productDIV += '<section class="container mb-3"><div class="row g-2" id="laptopSection"><h2>'+getProductTitle+'</h2><!-- laptopProduct -->'
+        productDIV += `
+            <section class="container mb-3">
+                <div class="row g-2" id="laptopSection">
+                    <h2>`+getProductTitle+`</h2>
+                    <!-- laptopProduct -->`
         for (let i = 0; i < productItem.length; i++) {
             let getProductItem = productItem[i];
 
